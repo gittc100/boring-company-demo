@@ -8,7 +8,7 @@ The Purpose of this project is to evaluate the overall system requirements for t
 
 <hr/>
 
-## Boring Company Objective's
+## Boring Company Objectives
 
 Provide method's of increasing transportation rates via: 
 - Electric Vehicle Sub Surface Transportation
@@ -19,7 +19,7 @@ Provide method's of increasing transportation rates via:
 - Tunnels will only support a single lane
 - Ideal Electric Vehicle Maximum Velocity 150mph
 - Mixture Between railed/free electric vehicle tunnels
-- Moving to surface launch and porpoising
+- Moving to surface launch and porpoising for entrance and exit
 
 ![Tunnel](./imgs/tunnel1.jpg)
 ![SLAP](./imgs/porp.png)
@@ -27,16 +27,17 @@ Provide method's of increasing transportation rates via:
 ![Station2](./imgs/Station2.png)
 ![Station3](./imgs/Station3.png)
 
-## My Assumption's
+## My Initial Assumptions
 - Smaller Equipment/Tunnels is ideal will reduce cost and complexity
-- Currently using bumper rails for high speeds will eventualy move to railess
-- Surface launch and porpoising will make entry and exit speed's high
-- Greatess complexity will be terminal design and traffic control
+- Currently using bumper rails for high speeds will eventualy move to railess?
+- Surface launch and porpoising will make entry and exit speed's higher
+- Greatess complexity will be transitions and end points
 - Minimum aproach to hardware requirements
     - Wireless Accesspoints
     - Video/Audio
     - Air Sensors
     - Ventilation Management
+    - lighting
 
 ### The Evaluation will include:
 - [Traffic Control Architecture](## "Traffic Control Architecture")
@@ -46,14 +47,24 @@ Provide method's of increasing transportation rates via:
 - [Summary](##Summary)
 - [Demo](##Demo)
 
-
-
 <hr/>
 
 <!-- ## Diagrams
 ![alt](./illistrations/drawing.svg) -->
 
 ## Traffic Control Architecture
+
+### Existing Tesla Sensors
+
+Forward-looking radar: The radar used by Autopilot can see up to 160m ahead of the car, through "sand, snow, fog--almost anything," according to Musk. Radar is the primary sensor used to detect the vehicle's surroundings, along with the front-facing cameras.
+
+Eight cameras: The four forward-facing cameras on the windshield of the car serve as a backup to the radar. The cameras consist of a narrow camera that captures footage 250m in front, a main camera that captures 150m in front, a wide-angle camera that captures 60m in front, and a camera that captures footage 80m in front and to the side of the car. The wide-angle camera is designed to read road signs and traffic lights, allowing the car to react accordingly, however, there is debate over whether this feature is enabled in cars with Autopilot 2.0 hardware. A pair of rear cameras captures footage up to 100 meters to the rear and the rear sides of the car.
+
+Sonar: A 360-degree, ultrasonic sonar detects obstacles in an eight-meter radius around the car. The ultrasonic sensors can spot objects like a child or a dog, and work at any speed. This feature can also detect objects in blind spots and assist the car when automatically switching lanes.
+
+GPS: A satellite navigation system can detect the car's position on the road.
+
+![Sensors](./imgs/autopilotsensors.png)
 
 <hr/>
 
