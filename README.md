@@ -1,14 +1,79 @@
 # Boring Company Demo
-Gotta Go Fast
-## Navigation
-- [General Notes](./docs/notes.md)
 
-## Diagrams
-![alt](./illistrations/drawing.svg)
+## Description
+The Purpose of this project is to evaluate the overall system requirements for the boring company's transportation network and provide a feature [Demo](##Demo). 
+
+#### General Notes
+- All Diagrams/Illistrations were created with the free program [Inkscape](https://inkscape.org/) and are stored as svg's in the [illistrations](./illistrations) folder. 
+
+<hr/>
+
+## Boring Company Objective's
+
+Provide method's of increasing transportation rates via: 
+- Electric Vehicle Sub Surface Transportation
+- Hyper Loop Sub Surface Transportation
+
+## Initial Observations
+- Use smaller single size diameter tunnels (12ft)
+- Tunnels will only support a single lane
+- Ideal Electric Vehicle Maximum Velocity 150mph
+- Mixture Between railed/free electric vehicle tunnels
+- Moving to surface launch and porpoising
+
+![Tunnel](./imgs/tunnel1.jpg)
+![SLAP](./imgs/porp.png)
+![Station1](./imgs/Station1.png)
+![Station2](./imgs/Station2.png)
+![Station3](./imgs/Station3.png)
+
+## My Assumption's
+- Smaller Equipment/Tunnels is ideal will reduce cost and complexity
+- Currently using bumper rails for high speeds will eventualy move to railess
+- Surface launch and porpoising will make entry and exit speed's high
+- Greatess complexity will be terminal design and traffic control
+- Minimum aproach to hardware requirements
+    - Wireless Accesspoints
+    - Video/Audio
+    - Air Sensors
+    - Ventilation Management
+
+### The Evaluation will include:
+- [Traffic Control Architecture](## "Traffic Control Architecture")
+- [Automotive Embedded Architecture](## "Automotive Embedded Architecture")
+- [Network Software Architecture](## "Network Software Architecture")
+- [Network Hardware Architecture](## "Network Hardware Architecture")
+- [Summary](##Summary)
+- [Demo](##Demo)
 
 
 
+<hr/>
 
+<!-- ## Diagrams
+![alt](./illistrations/drawing.svg) -->
+
+## Traffic Control Architecture
+
+<hr/>
+
+## Automotive Embedded Architecture
+
+<hr/>
+
+## Network Software Architecture
+
+<hr/>
+
+## Network Hardware Architecture
+
+<hr/>
+
+## Summary
+
+<hr/>
+
+## Demo
 
 
 <!-- # Project Title
