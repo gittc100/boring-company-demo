@@ -29,13 +29,13 @@ Provide method's of increasing transportation rates via:
 
 ## My Initial Assumptions
 - Smaller Equipment/Tunnels is ideal will reduce cost and complexity
-- Currently using bumper rails for high speeds will eventualy move to railess?
+- Currently using bumper rails for high speeds will eventualy move to railless?
 - Surface launch and porpoising will make entry and exit speed's higher
-- Greatess complexity will be transitions and end points
+- Greatess complexity will be tunnel transitions and end points
 - Minimum aproach to hardware requirements
     - Wireless Accesspoints
     - Video/Audio
-    - Air Sensors
+    - Air Quality Sensors
     - Ventilation Management
     - lighting
 
@@ -62,9 +62,84 @@ Eight cameras: The four forward-facing cameras on the windshield of the car serv
 
 Sonar: A 360-degree, ultrasonic sonar detects obstacles in an eight-meter radius around the car. The ultrasonic sensors can spot objects like a child or a dog, and work at any speed. This feature can also detect objects in blind spots and assist the car when automatically switching lanes.
 
-GPS: A satellite navigation system can detect the car's position on the road.
-
 ![Sensors](./imgs/autopilotsensors.png)
+
+### How Can Tunnels Transition Between Each Other?
+
+1. Provide Larger Diameter Tunnels with Wyes (Least likely/Least Ideal)
+    - Pros
+        - Provide Multi Lane Tunnels > 2
+        - Provides speed transiton lanes equal to normal highways
+        - Easier to connect entry/exit tunnels via wyes
+    - Cons
+        - A New Concrete Connection would need to be developed for the wye
+        - Larger Boring Machines
+        - Higher Cost
+        - Greater Complexity of Physical Pathways
+2. Retain Standard Diameter Tunnels with Non Tunnel Based Transitions (likely/Not Ideal)
+    - Pros
+        - Doesn't Require Special Wye Transitions
+        - Easier engineering design 
+        - Provides speed transiton lanes equal to normal highways
+        - Easier to connect entry/exit tunnels
+    - Cons
+        - In general this will be the most time consuming and labor intensive
+        - Expensive
+3. Retain Standard Diameter Tunnels with Wyes (Most likely/Ideal)
+    - Pros
+        - Retains Current Tunnel Architecture
+        - Retains Current Boring Machine
+    - Cons
+        - A New Concrete Connection would need to be developed for the wye, mostlikely the most complex wye installation and design
+        - Wyes can be a impactful resistance to the overall flow of traffic
+        - May require complex transitioning structures to decrease resistance
+        - May require drivers to experience overwelming centripital acceleration
+
+### Traffic Control 
+
+#### Fundamentals
+
+macroscopic / microscopic
+
+Characteristics
+
+- Flux (J) => flow rate / current of traffic (vehicles/time)
+- Density (c) =>
+- Distance Headway => Space between 2 vehicles
+- Time Headway => interval beyween departures/arrivals
+
+#### Macroscopic
+
+System Components
+
+1. Entry
+    - street to entry queue
+    - external traffic will dictate queue size
+2. Tunnel
+
+3. Tunnel Transitions (Wyes)
+    - tunnel to tunnel queue
+    - velocity change 
+4. Exit
+    - exit to street queue
+    - external traffic will dictate queue size
+    - will dictate
+
+#### Saftey/Emergency
+
+All conditions will require overall system awareness, redirection of vehicles and worse case cenario allow egress of passenegers.
+
+1. Vehicle Failure
+- Stopped
+- Fire
+2. HVAC Failure
+- Shut Down
+3. Egress
+- Directions
+
+
+
+
 
 <hr/>
 
@@ -86,7 +161,6 @@ GPS: A satellite navigation system can detect the car's position on the road.
 
 ## Demo
 
-
 <!-- # Project Title
 
 One Paragraph of project description goes here
@@ -102,7 +176,6 @@ What things you need to install the software and how to install them
 ```
 Give examples
 ```
-
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
