@@ -15,10 +15,10 @@ Provide method's of increasing transportation rates via:
 - Hyper Loop Sub Surface Transportation
 
 ## Initial Observations
-- Use smaller single size diameter tunnels (12ft)
+- Use smaller single size diameter tunnels (12ft inner)
 - Tunnels will only support a single lane
-- Ideal Electric Vehicle Maximum Velocity 150mph
-- Mixture Between railed/free electric vehicle tunnels
+- Ideal Automobile Maximum Velocity 150mph
+- Rail Guides are provided for tunnel usage
 - Moving to surface launch and porpoising for entrance and exit
 
 ![Tunnel](./imgs/tunnel1.jpg)
@@ -29,15 +29,15 @@ Provide method's of increasing transportation rates via:
 
 ## My Initial Assumptions
 - Smaller Equipment/Tunnels is ideal will reduce cost and complexity
-- Currently using bumper rails for high speeds will eventualy move to railless?
-- Surface launch and porpoising will make entry and exit speed's higher
+- Retain Bumper Rails for all transport
+- Surface launch and porpoising will make entry and exit flow rate higher
 - Greatess complexity will be tunnel transitions and end points
 - Minimum aproach to hardware requirements
-    - Wireless Accesspoints
-    - Video/Audio
-    - Air Quality Sensors
-    - Ventilation Management
-    - lighting
+    - Wireless Accesspoints (Communication)
+    - Video (Localization)
+    - Air Quality Sensors (Saftey)
+    - Ventilation Management (Saftey)
+    - Lighting (General and Emergency Egress)
 
 ### The Evaluation will include:
 - [Traffic Control Architecture](## "Traffic Control Architecture")
@@ -48,119 +48,222 @@ Provide method's of increasing transportation rates via:
 - [Demo](##Demo)
 
 <hr/>
+<hr/>
 
 <!-- ## Diagrams
 ![alt](./illistrations/drawing.svg) -->
 
 ## Traffic Control Architecture
 
+### Intro
+
+Given all of the available information I beleive that it is possible to create a deterministic traffic control system.
+
+We have the capability to fully control the vehicles as well as know all pertinant information to understand the kinematics and kinetics of the vehicles and their relation between each other and the tunnel system structure.
+
+The determined pysical tunnel system structure will be the most challenging aspect of the project, for it will be the most limiting factor in performace.
+
+My assumption is that the vehicles and tunnel monitoring system will simulataneously determine if collisions will occure inorder to avoid them, the tunnel monitoring system will determine position, velocity and acceleration of the entire vehicle set to provide a smooth and seemless experience.
+
+<hr/>
+
 ### Existing Tesla Sensors
 
-Forward-looking radar: The radar used by Autopilot can see up to 160m ahead of the car, through "sand, snow, fog--almost anything," according to Musk. Radar is the primary sensor used to detect the vehicle's surroundings, along with the front-facing cameras.
+"Forward-looking radar: The radar used by Autopilot can see up to 160m ahead of the car, through "sand, snow, fog--almost anything," according to Musk. Radar is the primary sensor used to detect the vehicle's surroundings, along with the front-facing cameras.
 
 Eight cameras: The four forward-facing cameras on the windshield of the car serve as a backup to the radar. The cameras consist of a narrow camera that captures footage 250m in front, a main camera that captures 150m in front, a wide-angle camera that captures 60m in front, and a camera that captures footage 80m in front and to the side of the car. The wide-angle camera is designed to read road signs and traffic lights, allowing the car to react accordingly, however, there is debate over whether this feature is enabled in cars with Autopilot 2.0 hardware. A pair of rear cameras captures footage up to 100 meters to the rear and the rear sides of the car.
 
-Sonar: A 360-degree, ultrasonic sonar detects obstacles in an eight-meter radius around the car. The ultrasonic sensors can spot objects like a child or a dog, and work at any speed. This feature can also detect objects in blind spots and assist the car when automatically switching lanes.
+Sonar: A 360-degree, ultrasonic sonar detects obstacles in an eight-meter radius around the car. The ultrasonic sensors can spot objects like a child or a dog, and work at any speed. This feature can also detect objects in blind spots and assist the car when automatically switching lanes."
 
 ![Sensors](./imgs/autopilotsensors.png)
 
+Tesla existing collision avoidance should be the last measure against collision, the tunnel traffic managing system should avoid all possible occurances, but constant communication between each other is required inorder to update kinematic data for state synchronicity. 
+
 ### How Can Tunnels Transition Between Each Other?
 
-1. Provide Larger Diameter Tunnels with Wyes (Least likely/Least Ideal)
+The greatest challenge here is to provide a method of connecting tunnels together. Without this ability the pathing inefficency of the project would explode, rendered the project usless.
+
+Possible methods:
+
+1. Retain Standard Diameter Tunnels with Non Tunnel Based Transitions (likely/Not Ideal)
+    - Like a traditional sub surface construction, looks like a box with two entrances, two exits in parrallel with each other and moving in the same direction.
     - Pros
-        - Provide Multi Lane Tunnels > 2
-        - Provides speed transiton lanes equal to normal highways
-        - Easier to connect entry/exit tunnels via wyes
-    - Cons
-        - A New Concrete Connection would need to be developed for the wye
-        - Larger Boring Machines
-        - Higher Cost
-        - Greater Complexity of Physical Pathways
-2. Retain Standard Diameter Tunnels with Non Tunnel Based Transitions (likely/Not Ideal)
-    - Pros
-        - Doesn't Require Special Wye Transitions
+        - Doesn't Require Special Transitions
         - Easier engineering design 
-        - Provides speed transiton lanes equal to normal highways
         - Easier to connect entry/exit tunnels
     - Cons
-        - In general this will be the most time consuming and labor intensive
-        - Expensive
-3. Retain Standard Diameter Tunnels with Wyes (Most likely/Ideal)
+        - In general this will be the most time consuming and labor intensive aspect of construction.
+        - Will slow construction immensely.
+        - Cannot connect existing tunnels at a later time.
+        - Expensive.
+2. Retain Standard Diameter Tunnels with Traffic Mixing Valves (Most likely/Ideal)
+    - It would consist of two entrances, two exits in parrallel with each other and moving in the same direction.
     - Pros
         - Retains Current Tunnel Architecture
         - Retains Current Boring Machine
+        - Provide ability for post installation transitions (Add connections to existing tunnels)
     - Cons
-        - A New Concrete Connection would need to be developed for the wye, mostlikely the most complex wye installation and design
-        - Wyes can be a impactful resistance to the overall flow of traffic
-        - May require complex transitioning structures to decrease resistance
-        - May require drivers to experience overwelming centripital acceleration
+        - A New Concrete Connection and Installation Machine would need to be developed for the mixing valve, this will be a very difficult mechanical engineering feat.
+        - But worth it.
+
+Both can be modeled in the same matter what differs is only in the method of construction.
+
+<hr/>
+<hr/>
 
 ### Traffic Control 
 
-#### Fundamentals
+While looking into existing traffic control systems, I noticed that they are stoicastic in design. This is not ideal for saftey and control. Given our control of all the parameters we can create a deterministic architecture.
 
-macroscopic / microscopic
+<hr/>
 
-Characteristics
-
-- Flux (J) => flow rate / current of traffic (vehicles/time)
-- Density (c) =>
-- Distance Headway => Space between 2 vehicles
-- Time Headway => interval beyween departures/arrivals
-
-#### Macroscopic
-
-System Components
-
-1. Entry
+#### Tunnel System Components
+1. Entry/Queue
     - street to entry queue
-    - external traffic will dictate queue size
-2. Tunnel
-
-3. Tunnel Transitions (Wyes)
-    - tunnel to tunnel queue
-    - velocity change 
-4. Exit
+    - external traffic will dictate queue size 
+    - can be below or/and above ground
+    - porposing
+2. Tunnels
+    - straight
+    - curved
+    - spiral
+    - loops (queues/buffer/transition hub)
+3. Tunnel Transitions (mixing valve)
+    - minimize params
+    - provide a saftey buffer
+4. Exit/Queue
     - exit to street queue
     - external traffic will dictate queue size
-    - will dictate
+    - can be below or/and above ground
+    - porposing
 
 #### Saftey/Emergency
 
 All conditions will require overall system awareness, redirection of vehicles and worse case cenario allow egress of passenegers.
 
 1. Vehicle Failure
-- Stopped
-- Fire
+    - Stopped
+    - Fire
 2. HVAC Failure
-- Shut Down
+    - Shut Down
 3. Egress
-- Directions
+    - Lighting Directions to nearess escape hatch
 
-test
+<hr/>
+<hr/>
+
+### Database Structure
+
+#### Tunnel Static State (Database > SQL)
+- id (primary key)
+- global reference point (x,y,z / long, lat, sea level)
+- tunnel segment id entry list/tree
+- tunnel segment id exit list/tree
+
+#### Tunnel Physics Static Limitations (Database > SQL)
+- id (primary key)
+- Tunnel System id (foreign key)
+- allow banking construction (0/1) to reduce transitional loads on passengers in turns
+- allowable sliding force/ centripital acceleration on humans
+- max velocity (150 mi/hr)
+- max bank angle (deg)
+- max tunnel turning radius (ft)
+- max tunnel rise (ft/ft)
+
+#### Tunnel Segment Static State (Database > SQL)
+- id (primary key)
+- Tunnel System id (foreign key)
+- type (tunnel/tunnel transition)
+- is an Entry or Exit (0/1) (default 0 = not)
+- entry/exit (0/1)
+- contains emergency egress (0/1)
+- reference positions (x,y,z) starting points
+- path and plane rotation function (f(x,y,z,ϴ))
+- design velocity (mi/hr) (0 < 50 < 100 < 150)
+- previous segment id (foreign key)
+- next segment id (foreign key)
+
+#### Tunnel Segment Dynamic State (Database > Redis)
+- segment id (foreign key)
+- direction (+/-, 0/1) to reference points
+- emergency egress in use (0/1)
+- blocked (0/1)
+- occupancy list (list of current automobile id's inorder)
+- timestamp (t)
+
+#### Tunnel System Entry Queue State (Database > Redis)
+- segment id (foreign key)
+- occupancy list (list of current automobile id's inorder)
+- timestamp (t)
+
+<hr/>
+
+#### Automobile Static State (Database > SQL)
+- id (primary key)
+- model id (name)
+- width (w)
+- height (h)
+- maximum velocity (v max)
+- maximum acceleration (a max)
+- maximum deacceleration (a dmax)
+- battery state
+    - maximum capacity
+
+#### Automobile Dynamic State (Database > Redis)
+- automobile id (foreign key)
+- battery state
+    - remaining capacity
+- position (x,z,y)
+- velocity (v)
+- acceleration (a)
+- disabled (True/False/Conditional)
+- timestamp (t)
+- distance headway (ft) (automobile in front)
+
+#### Automobile Dynamic Path State (Database > Redis)
+- automobile id (foreign key)
+- permitted to enter system (0/1)
+- segment id list (foreign key single linked, list in order) first is current
+- timestamp (t)
+
+<hr/>
 
 
 
 
+
+<hr/>
 <hr/>
 
 ## Automotive Embedded Architecture
 
 <hr/>
+<hr/>
 
 ## Network Software Architecture
 
+<hr/>
 <hr/>
 
 ## Network Hardware Architecture
 
 <hr/>
-
-## Summary
-
 <hr/>
 
 ## Demo
+
+[Demo Production Link]()
+
+<hr/>
+<hr/>
+
+## Authors
+
+**Thomas Claydon**
+<br>
+[GitHub](https://github.com/gittc100)
+<br>
+[Website](https://www.thomasclaydon.com)
 
 <!-- # Project Title
 
